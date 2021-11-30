@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% block content %}
+<div>
+    <h3>Suche einer Person über Nummer</h3>
+    <form action="{{ url_for('get_person_by_number') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.number.label }} <br>
+                {{ form.number(placeholder='Matrikelnummer oder Personalnummer der Person') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit3 }}
+            </p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Suche einer Person über Namen</h3>
+    <form action="{{ url_for('get_person_by_name') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.name.label }} <br>
+                {{ form.name(placeholder='Nachname der Person') }}
+            </p>
+             <!-- Professor/Assistent forms -->
+            <p>
+                {{ form.vorname.label }}<br>
+                {{form.vorname(placeholder='Vorname der Person')}}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit3 }}
+            </p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Suche nach allen Veranstaltungen, die von einer Person gehalten werden</h3>
+    <form action="{{ url_for('get_events_by_person') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.number2.label }}<br>
+                {{form.number2(placeholder='Personalnummer des Professors oder Assistenten')}}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit3 }}
+            </p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Suche nach allen Veranstaltungen, die von einem Studenten gehört werden</h3>
+    <form action="{{ url_for('get_event_listend_by_student') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.matr_nr.label }} <br>
+                {{ form.matr_nr(placeholder='Matrikelnummer des Studenten') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit3 }}
+            </p>
+        </div>
+    </form>
+</div>
+{% endblock %}

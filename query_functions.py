@@ -263,7 +263,7 @@ def insert_new_testresult(conn, matr_nr, vst_nr, persNr_prof, result):
        :param conn: (list) the Connection object
        :return: new data record of testresult
     """
-
+    #Kommentar
     cur = conn.cursor()
     cur.execute("""SELECT MatrNr FROM Studenten
                         WHERE 

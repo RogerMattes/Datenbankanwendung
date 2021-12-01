@@ -294,7 +294,7 @@ def insert_new_testresult(conn, matr_nr, vst_nr, persNr_prof, result):
         print("Veranstaltungsnummer existiert nicht!")
     elif not c:
         print("Personalnummer existiert nicht oder ist nicht die eines Professors!")
-    elif d:
+    elif not d:
         print("Student ist nicht in der Veranstaltung eingeschrieben!")
     elif float(result) > 6.0:
         print("Ungültige Eingabe. Prüfungsergebnis muss <= 6.0 sein.")

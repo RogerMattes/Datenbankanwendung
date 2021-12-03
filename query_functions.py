@@ -415,7 +415,9 @@ def insert_new_professor(conn, pers_nr, name, vorname, rang, gebaeude, raum):
 
     row = cur.fetchall()
 
-    if str(rang) != "W2" or "W3":
+    if str(rang) != "W2":
+        print("Ungültiger Rang!")
+    elif str(rang) != "W3":
         print("Ungültiger Rang!")
     elif row[0][0] == 0 and vorname == "":
         cur.execute("""INSERT INTO Professoren(PersNr, Name, Vorname, Rang, Gebaeude, Raum)

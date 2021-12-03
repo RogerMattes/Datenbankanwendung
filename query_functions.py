@@ -553,6 +553,10 @@ def delete_student(conn, matr_nr):
     if row[0][0]:
         cur.execute("""DELETE FROM Studenten                 
                     WHERE MatrNr = {};""".format(matr_nr))
+        cur.execute("""DELETE FROM hoeren                 
+                            WHERE MatrNr = {};""".format(matr_nr))
+        cur.execute("""DELETE FROM pruefen                 
+                                    WHERE MatrNr = {};""".format(matr_nr))
         print("Student wurde erfolgreich gelöscht.")
     else:
         print("Matrikelnummer existiert nicht!")

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% block content %}
+<div>
+    <h3>Professor löschen</h3>
+    <form action="{{ url_for('delete_professor') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.persNr_prof.label }} <br>
+                {{ form.persNr_prof(placeholder='Personalnummer des Professors') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_delete }}
+            </p>
+            <p>{{msg_professor}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Assistenten löschen</h3>
+    <form action="{{ url_for('delete_assistant') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.persNr_assist.label }} <br>
+                {{ form.persNr_assist(placeholder='Personalnummer des Assistenten') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_delete }}
+            </p>
+            <p>{{msg_assistant}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Studenten löschen</h3>
+    <form action="{{ url_for('delete_student') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.matr_nr.label }} <br>
+                {{ form.matr_nr(placeholder='Matrikelnummer des Studenten') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_delete }}
+            </p>
+            <p>{{msg_student}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <form action="{{ url_for('index') }}">
+        <p>{{ form.submit_home }}</p>
+</form>
+
+</div>
+{% endblock %}

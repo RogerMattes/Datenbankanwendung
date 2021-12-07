@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% block content %}
+<div>
+    <h3>Ausgabe aller Professoren mit allen Angaben</h3>
+    <form action="{{ url_for('select_all_from_professors') }}" method=post>
+        <div>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_output }}
+            </p>
+            <p>{{output_professors}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Ausgabe aller Assistenten mit allen Angaben</h3>
+    <form action="{{ url_for('select_all_from_assistants') }}" method=post>
+        <div>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_output }}
+            </p>
+            <p>{{output_assistants}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Ausgabe aller Studenten mit allen Angaben</h3>
+    <form action="{{ url_for('select_all_from_students') }}" method=post>
+        <div>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_output }}
+            </p>
+            <p>{{output_students}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Ausgabe aller Veranstaltungen mit allen Angaben</h3>
+    <form action="{{ url_for('select_all_from_events') }}" method=post>
+        <div>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_output }}
+            </p>
+            <p>{{output_events}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <form action="{{ url_for('index') }}">
+        <p>{{ form.submit_home }}</p>
+</form>
+</div>
+{% endblock %}

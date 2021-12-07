@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% block content %}
+<div>
+    <h3>Neuen Professor anlegen</h3>
+    <form action="{{ url_for('insert_new_professor') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.persNr_prof.label }} <br>
+                {{ form.persNr_prof(placeholder='Personalnummer des Professors') }}
+            </p>
+            <!-- email forms -->
+            <p>
+                {{ form.name.label }} <br>
+                {{ form.name(placeholder='Nachname der Person') }}
+            </p>
+            <!-- Subject of your request -->
+            <p>
+                {{ form.vorname.label }}<br>
+                {{form.vorname(placeholder='Vorname der Person')}}
+            </p>
+            <p>
+                {{ form.rang.label }}<br>
+                {{ form.rang(placeholder='Rang des Professors') }}
+            </p>
+            <p>
+                {{ form.gebaeude.label }}<br>
+                {{ form.gebaeude(placeholder='Gebäude in dem unterrichtet wird') }}
+            </p>
+            <p>
+                {{ form.raum.label }}<br>
+                {{ form.raum(placeholder='Vorlesungsraum') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_save }}
+            </p>
+            <p>{{msg_professor}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Neuen Assistenten anlegen</h3>
+    <form action="{{ url_for('insert_new_assistant') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.persNr_assist.label }} <br>
+                {{ form.persNr_assist(placeholder='Personalnummer des Professors') }}
+            </p>
+            <!-- email forms -->
+            <p>
+                {{ form.name.label }} <br>
+                {{ form.name(placeholder='Nachname der Person') }}
+            </p>
+            <!-- Subject of your request -->
+            <p>
+                {{ form.vorname.label }}<br>
+                {{form.vorname(placeholder='Vorname der Person')}}
+            </p>
+            <p>
+                {{ form.fachgebiet.label }}<br>
+                {{ form.fachgebiet(placeholder='Fachgebiet des Person') }}
+            </p>
+            <p>
+                {{ form.zugeordnet.label }}<br>
+                {{ form.zugeordnet(placeholder='Personalnummer des Professors') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_save }}
+            </p>
+            <p>{{msg_assistant}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Neuen Studenten anlegen</h3>
+    <form action="{{ url_for('insert_new_student') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.matr_nr.label }} <br>
+                {{ form.matr_nr(placeholder='Matrikelnummer des Studenten') }}
+            </p>
+            <!-- email forms -->
+            <p>
+                {{ form.name.label }} <br>
+                {{ form.name(placeholder='Nachname der Person') }}
+            </p>
+            <p>
+                {{ form.vorname.label }} <br>
+                {{ form.vorname(placeholder='Vorname der Person') }}
+            </p>
+            <!-- Subject of your request -->
+            <p>
+                {{ form.semester.label }}<br>
+                {{form.semester(placeholder='Semester des Studenten')}}
+            </p>
+            <p>
+                {{ form.kurs.label }}<br>
+                {{ form.kurs(placeholder='Kurs des Studenten') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_save }}
+            </p>
+            <p>{{msg_student}}</p>
+        </div>
+    </form>
+</div>
+<div>
+    <form action="{{ url_for('index') }}">
+        <p>{{ form.submit_home }}</p>
+</form>
+</div>
+{% endblock %}

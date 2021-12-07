@@ -1,0 +1,94 @@
+<!doctype html>
+{% block content %}
+<div>
+    <h3>Neue Prüfungsergebnisse anlegen</h3>
+    <form action="{{ url_for('append_result') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.matr_nr.label }} <br>
+                {{ form.matr_nr(placeholder='Matrikelnummer des Studenten') }}
+            </p>
+            <!-- email forms -->
+            <p>
+                {{ form.vst_nr.label }} <br>
+                {{ form.vst_nr(placeholder='Veranstaltungsnummer ') }}
+            </p>
+            <!-- Subject of your request -->
+            <p>
+                {{ form.persNr_prof.label }}<br>
+                {{form.persNr_prof(placeholder='Personalnummer des Professors')}}
+            </p>
+            <!-- Content of your request -->
+            <p>
+                {{ form.result.label }}<br>
+                {{ form.result(placeholder='Note der absolvierten Prüfung') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_save }}
+            </p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Studenten in neue Veranstaltung einschreiben</h3>
+    <form action="{{ url_for('append_student_to_event') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.matr_nr.label }} <br>
+                {{ form.matr_nr(placeholder='Matrikelnummer des Studenten') }}
+            </p>
+            <!-- email forms -->
+            <p>
+                {{ form.vst_nr.label }} <br>
+                {{ form.vst_nr(placeholder='Veranstaltungsnummer') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_save }}
+            </p>
+        </div>
+    </form>
+</div>
+<div>
+    <h3>Neue Veranstaltung anlegen</h3>
+    <form action="{{ url_for('insert_new_event') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.vst_nr.label }} <br>
+                {{ form.vst_nr(placeholder='Veranstaltungsnummer') }}
+            </p>
+            <p>
+                {{ form.title.label }} <br>
+                {{ form.title(placeholder='Titel der Veranstaltung') }}
+            </p>
+            <p>
+                {{ form.sws.label }} <br>
+                {{ form.sws(placeholder='Semester der Veranstaltung') }}
+            </p>
+            <!-- email forms -->
+            <p>
+                {{ form.persNr_prof.label }} <br>
+                {{ form.persNr_prof(placeholder='Personalnummer des Professors') }}
+            </p>
+            <p>
+                {{ form.pre_event.label }} <br>
+                {{ form.pre_event(placeholder='Vorgänger-Veranstaltunge(falls notwendig)')}}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit_save }}
+            </p>
+        </div>
+    </form>
+</div>
+<div>
+    <p>{{msg}}</p>
+    <form action="{{ url_for('index') }}">
+        <p>{{ form.submit_home }}</p>
+</form>
+</div>
+{% endblock %}

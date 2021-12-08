@@ -432,7 +432,7 @@ def insert_new_event(conn, vst_nr, title, sws, persNr_prof, pre_event):
         return error  
     else:
         cur.execute("""INSERT INTO voraussetzen(Vorgaenger, Nachfolger)
-                        VALUES({},{}).""".format(pre_event, vst_nr))
+                        VALUES({}, {})""".format(pre_event, vst_nr))
         cur.execute("""INSERT INTO Veranstaltungen(VstNr, Titel, SWS, gelesenVon)
                             VALUES({}, '{}', {}, {})
                   """.format(vst_nr, title, sws, persNr_prof))

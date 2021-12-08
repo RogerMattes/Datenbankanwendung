@@ -49,7 +49,7 @@ class ResultsForm(FlaskForm):
 
     zugeordnet = IntegerField("zugeordneter Professor", validators=[DataRequired(), InputRequired()])
 
-    pre_event = IntegerField("Vorgänger-Veranstaltung", validators=[DataRequired()])
+    pre_event = IntegerField("Vorgänger-Veranstaltung", validators=[])
 
     submit_save = SubmitField('Speichern')
 

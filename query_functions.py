@@ -411,7 +411,12 @@ def insert_new_event(conn, vst_nr, title, sws, persNr_prof, pre_event):
             error = "Diese Vorgänger-Veranstaltung existiert nicht."
             print(error)
             return error
-
+        
+    for i in special_character_for_title:
+        if i in title:
+            error = "Titel darf nur Buchstaben, Zahlen oder Leerzeichen enthalten."
+            print(error)
+            return error    
     if a:
         error = "Veranstaltung existiert bereits!"
         print(error)

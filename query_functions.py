@@ -407,6 +407,10 @@ def insert_new_event(conn, vst_nr, title, sws, persNr_prof, pre_event):
         cur.execute("""SELECT Vorgaenger FROM voraussetzen
                     WHERE Vorgaenger = {}""".format(pre_event))
         c = cur.fetchall()
+        if not c:
+            error = "Diese Vorgänger-Veranstaltung existiert nicht."
+            print(error)
+            return error
 
     if a:
         error = "Veranstaltung existiert bereits!"
@@ -415,11 +419,7 @@ def insert_new_event(conn, vst_nr, title, sws, persNr_prof, pre_event):
     elif not b:
         error = "Personalnummer existiert nicht!"
         print(error)
-        return error
-    elif not c:
-        error = "Diese Vorgänger-Veranstaltung existiert nicht."
-        print(error)
-        return error
+        return error  
     else:
         cur.execute("""INSERT INTO Veranstaltungen(VstNr, Titel, SWS, gelesenVon)
                             VALUES({}, '{}', {}, {})

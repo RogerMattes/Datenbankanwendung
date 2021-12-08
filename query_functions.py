@@ -1,5 +1,4 @@
 import sqlite3
-import string
 from sqlite3 import Error
 
 

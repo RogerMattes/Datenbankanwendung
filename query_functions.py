@@ -322,7 +322,7 @@ def insert_new_testresult(conn, matr_nr, vst_nr, persNr_prof, result):
         print(error)
         return error
     elif float(result) > 5.0:
-        error = "Ungültige Eingabe. Prüfungsergebnis muss <= 6.0 sein."
+        error = "Ungültige Eingabe. Prüfungsergebnis muss <= 5.0 sein."
         print(error)
         return error
     else:

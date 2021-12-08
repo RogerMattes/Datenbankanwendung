@@ -380,6 +380,11 @@ def insert_new_student_to_event(conn, matr_nr, vst_nr):
         print(success)
         return success
 
+    
+special_character_for_title = ["!", "'", ".", "_", "-", ",", ";", "§", "$", "%", "&", "/", "{", "}", "[", "]", "?", "\""
+                        , "(", ")", "=", "`", "´", "+", "*", "'", "#", "~", "°", "^", "@", "€", ">", "<", "|", '"'
+                        , ":"]
+    
 
 def insert_new_event(conn, vst_nr, title, sws, persNr_prof, pre_event):
     """

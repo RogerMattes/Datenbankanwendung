@@ -403,10 +403,10 @@ def insert_new_event(conn, vst_nr, title, sws, persNr_prof, pre_event):
                     WHERE Professoren.PersNr LIKE {};
                 """.format(persNr_prof))
     b = cur.fetchall()
-
-    cur.execute("""SELECT Vorgaenger FROM voraussetzen
-                WHERE Vorgaenger = {}""".format(pre_event))
-    c = cur.fetchall()
+    if pre_event != "":
+        cur.execute("""SELECT Vorgaenger FROM voraussetzen
+                    WHERE Vorgaenger = {}""".format(pre_event))
+        c = cur.fetchall()
 
     if a:
         error = "Veranstaltung existiert bereits!"

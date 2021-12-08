@@ -429,8 +429,9 @@ def insert_new_event(conn, vst_nr, title, sws, persNr_prof, pre_event):
         return success
 
 
-special_character = ["!", "'", ".", "_", "-", ",", ";", "§", "$", "%", "&", "/", "{", "}", "[", "]", "?", "\"",
-                         "(", ")", "=", "`", "´", "+", "*", "'", "#", "~", "°", "^", "@", "€", ">", "<", "|", '"', ":"]
+special_character = ["!", "'", ".", "_", "-", ",", ";", "§", "$", "%", "&", "/", "{", "}", "[", "]", "?", "\""
+                     , "(", ")", "=", "`", "´", "+", "*", "'", "#", "~", "°", "^", "@", "€", ">", "<", "|"
+                     , '"', ":", " "]
 
 
 def insert_new_professor(conn, pers_nr, name, vorname, rang, gebaeude, raum):
